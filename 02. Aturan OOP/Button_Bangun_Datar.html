@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bangun Datar</title>
+    <style>
+      button {
+        margin: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" name="button" onClick="Persegi()">Persegi</button><br>
+    <button type="button" name="button" onClick="PersegiPanjang()">Persegi Panjang</button><br>
+    <button type="button" name="button" onClick="Segitiga()">Segitiga</button><br>
+    <button type="button" name="button" onClick="Trapesium()">Trapesium</button><br>
+    <button type="button" name="button" onClick="Layang()">Layang-layang</button>
+
+    <script>
+      // Persegi
+      function Persegi(sisi, luas, ulang, keliling) {
+          sisi = prompt('Masukan Sisi');
+          luas=sisi*sisi;
+          keliling=4*sisi;
+          alert("Luas Persegi : "+luas+" Keliling Persegi : "+keliling);
+          ulang = confirm("Hitung Lagi ?");
+          if (ulang == true) return Persegi();
+      }
+
+      // Persegi Panjang
+      function PersegiPanjang(panjang, lebar, luas, ulang, keliling) {
+          panjang = prompt('Masukan panjang');
+          lebar = prompt('Masukan lebar');
+          panjang = parseInt(panjang);
+          lebar = parseInt(lebar);
+          luas=panjang*lebar;
+          keliling=2*(panjang+lebar);
+          alert("Luas Persegi Panjang : "+luas+", Keliling Persegi Panjang : "+keliling);
+          ulang = confirm("Hitung Lagi ?");
+          if (ulang == true) return PersegiPanjang();
+      }
+
+      // Segitiga
+      function Segitiga(tinggi, alas, luas, ulang, keliling) {
+          tinggi = prompt('Masukan Tinggi');
+          alas = prompt('Masukan Alas');
+          luas=alas*tinggi/2;
+          keliling=3*alas;
+          alert("Luas Segitiga : "+luas+" Keliling Segitiga : "+keliling);
+          ulang = confirm("Hitung Lagi ?");
+          if (ulang == true) return Segitiga();
+      }
+
+      // Trapesium
+      function Trapesium(tinggi, alas, atap, sisiMiring, luas, ulang, keliling) {
+          tinggi = prompt('Masukan Tinggi');
+          atap = prompt('Masukan Atap');
+          alas = prompt('Masukan alas');
+          sisiMiring = prompt('Masukan Sisi Miring');
+          tinggi = parseInt(tinggi);
+          alas = parseInt(alas);
+          atap = parseInt(atap);
+          sisiMiring = parseInt(sisiMiring);
+          luas=(atap+alas)/2*tinggi;
+          keliling=(2*sisiMiring)+atap+alas;
+          alert("Luas Trapesium : "+luas+" Keliling Trapesium : "+keliling);
+          ulang = confirm("Hitung Lagi ?");
+          if (ulang == true) return Trapesium();
+      }
+
+      // Layang - Layang
+      function Layang(tinggi, alas, luas, ulang, keliling) {
+          d1 = prompt('Masukan Diagonal 1');
+          d2 = prompt('Masukan Diagonal 2');
+          a = prompt('Masukan Sisi a');
+          b = prompt('Masukan Sisi b');
+          a = parseInt(a);
+          b = parseInt(b);
+          luas=d1*d2/2;
+          keliling=2*(a+b);
+          alert("Luas Layang-Layang : "+luas+" Keliling Layang-Layang : "+keliling);
+          ulang = confirm("Hitung Lagi ?");
+          if (ulang == true) return Layang();
+      }
+    </script>
+  </body>
+</html>

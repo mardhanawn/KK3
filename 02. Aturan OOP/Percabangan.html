@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Percabangan</title>
+  </head>
+  <body>
+    <button onClick="persegi()">Persegi</button>
+    <button onClick="persegipanjang()">Persegi Panjang</button>
+    <button onClick="segitiga()">Segitiga</button>
+
+    <script>
+      const persegi = () => {
+        var persegi = confirm("Tampilkan Ciri Ciri Persegi ?");
+        if (persegi == true){
+          document.write("a. Memiliki empat sisi yang sama panjang, AB = BC = CD = AD<br>");
+          document.write("b. Memiliki empat sudut yang sama besar. Besar masing-masing sudut adalah 90ᵒ<br>");
+          document.write("c. Kelilingnya adalah 4 x sisi<br>");
+          document.write("d. Luasnya adalah sisi x sisi<br>");
+          document.write("e. Memiliki dua diagonal sama panjang, AC dan BD<br>");
+          document.write("f. Memiliki empat simetri putar<br>");
+          document.write("g. Memiliki empat simetri lipat<br>");
+        }
+      }
+
+      const persegipanjang = () => {
+        var persegi = confirm("Tampilkan Ciri Ciri Persegi Panjang ?");
+        if (persegi == true){
+          document.write("a. Memiliki dua pasang sisi yang sama panjang, AB = CD dan AD = BC<br>");
+          document.write("b. Memiliki empat sudut yang sama besar, masing-masing besarnya 90ᵒ<br>");
+          document.write("c. Kelilingnya adalah (2 x panjang) + (2 x lebar)<br>");
+          document.write("d. Luasnya adalah panjang x lebar<br>");
+          document.write("e. Memiliki dua diagonal sama panjang, AC = BD<br>");
+          document.write("f. Memiliki dua simetri putar<br>");
+          document.write("g. Memiliki dua simetri lipat<br>");
+        }
+      }
+
+      const segitiga = () => {
+        var persegi = confirm("Tampilkan Ciri Ciri Segitiga ?");
+        if (persegi == true){
+          document.write("Jumlah sudut pada segitiga besarnya 180⁰.");
+        }
+      }
+    </script>
+  </body>
+</html>

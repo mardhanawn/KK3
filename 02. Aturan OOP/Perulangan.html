@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Percabangan</title>
+  </head>
+  <body>
+    nilai awal : <input type="text" id="awal"/><br>
+    nilai batas : <input type="text" id="batas"/><br>
+    <button type="button" name="button" id="loop" onClick="loop()">Click Me !</button>
+
+    <script>
+    const loop = () => {
+      var awal = document.getElementById("awal").value;
+      var batas = document.getElementById("batas").value;
+      for (; awal<=batas; awal++) {
+      document.write(awal + "<br>");
+      }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Welcome () {
+        this.greeting = () => { console.log("Selamat Datang"); };
+      }
+
+      var welcome = new Welcome();
+      welcome.greeting();
+
+      // Persegi
+      class Persegi {
+        constructor(sisi){
+          this.sisi = sisi;
+        }
+
+        Luas(){
+          return this.sisi * this.sisi;
+        }
+
+        Keliling(){
+          return this.sisi * 4;
+        }
+      }
+
+      // Persegi Panjang
+      class PersegiPanjang {
+        constructor(panjang, lebar){
+          this.panjang = panjang;
+          this.lebar = lebar;
+        }
+
+        Luas(){
+          return this.panjang * this.lebar;
+        }
+
+        Keliling(){
+          return 2*(this.panjang + this.lebar);
+        }
+      }
+
+      // Segitiga
+      class Segitiga {
+        constructor(alas, tinggi){
+          this.alas = alas;
+          this.tinggi = tinggi;
+        }
+
+        Luas(){
+          return this.alas * this.tinggi / 2;
+        }
+
+        Keliling(){
+          return this.alas * 3;
+        }
+      }
+
+      // Trapeziums
+      class Trapesium {
+        constructor(alas, tinggi, atap, sisiMiring){
+          this.alas = alas;
+          this.tinggi = tinggi;
+          this.atap = atap;
+          this.sisiMiring = sisiMiring;
+        }
+
+        Luas(){
+          return (this.atap + this.alas) * this.tinggi / 2;
+        }
+
+        Keliling(){
+          return this.atap + this.alas + this.sisiMiring * 2;
+        }
+      }
+
+      var persegi = new Persegi(10);
+      console.log("Luas Persegi : " + persegi.Luas());
+      console.log("Keliling Persegi : " + persegi.Keliling());
+
+      var persegipanjang = new PersegiPanjang(10,20);
+      console.log("Luas Persegi Panjang : " + persegipanjang.Luas());
+      console.log("Keliling Persegi Panjang : " + persegipanjang.Keliling());
+
+      var segitiga = new Segitiga(10,10);
+      console.log("Luas Segitiga : " + segitiga.Luas());
+      console.log("Keliling Segitiga : " + segitiga.Keliling());
+
+      var trapesium = new Trapesium(10,8,20,10);
+      console.log("Luas Trapesium : " + trapesium.Luas());
+      console.log("Keliling Trapesium : " + trapesium.Keliling());
+    </script>
+  </body>
+</html>

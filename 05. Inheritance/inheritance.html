@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Welcome () {
+        this.greeting = () => { document.write("Selamat Datang"); };
+      }
+
+      var welcome = new Welcome();
+      welcome.greeting();
+
+      // Parent Class
+      class BangunDatar {
+        constructor(){
+          this.luas = 0;
+          this.keliling = 0;
+        }
+
+        hitungLuas() { return this.luas; }
+        hitungKeliling() { return this.keliling; }
+      }
+
+      // Child class persegi
+      class Persegi extends BangunDatar{
+        constructor(){
+          super();
+          var sisi = 0;
+          this.getSisi = () => { return sisi; }
+          this.setSisi = (newSisi) => { sisi += newSisi; return sisi; }
+        }
+      }
+
+      // Child class persegi panjang
+      class PersegiPanjang extends BangunDatar{
+        constructor(){
+          super();
+          var lebar = 0;
+          var panjang = 0;
+
+          this.getLebar = () => { return lebar; }
+          this.getPanjang = () => { return panjang; }
+
+          this.setPanjang = (newPanjang) => { panjang += newPanjang; return panjang; }
+          this.setLebar = (newLebar) => { lebar += newLebar; return lebar; }
+        }
+      }
+
+      // Child class jajargenjang
+      class Jajargenjang extends BangunDatar{
+        constructor(){
+          super();
+          var tinggi = 0;
+          var alas = 0;
+          var sisiMiring = 0;
+
+          this.getTinggi = () => { return tinggi; }
+          this.getAlas = () => { return alas; }
+          this.getSisiMiring = () => { return sisiMiring; }
+
+          this.setTinggi = (newTinggi) => { tinggi += newTinggi; return tinggi; }
+          this.setAlas = (newAlas) => { alas += newAlas; return alas; }
+          this.setSisiMiring = (newSisiMiring) => { sisiMiring += newSisiMiring; return sisiMiring; }
+        }
+      }
+
+      // Child class trapesium
+      class Trapesium extends BangunDatar {
+        constructor(){
+          super();
+          var atap = 0;
+          var alas = 0;
+          var tinggi = 0;
+          var sisiMiring = 0;
+
+          this.getAtap = () => { return atap; }
+          this.getAlas = () => { return alas; }
+          this.getTinggi = () => { return tinggi; }
+          this.getSisiMiring = () =>{ return sisiMiring; }
+
+          this.setAtap = (newAtap) => { atap += newAtap; return atap; }
+          this.setAlas = (newAlas) => { alas += newAlas; return alas; }
+          this.setTinggi = (newTinggi) => { tinggi += newTinggi; return tinggi; }
+          this.setSisiMiring = (newSisiMiring) => { sisiMiring += newSisiMiring; return sisiMiring; }
+        }
+      }
+
+      // persegi
+      var persegi = new Persegi();
+      persegi.setSisi(10);
+      persegi.luas = persegi.getSisi() * persegi.getSisi();
+      persegi.keliling = persegi.getSisi()*4;
+      console.log("Luas Persegi : " + persegi.hitungLuas());
+      console.log("Keliling Persegi : " + persegi.hitungKeliling());
+
+      // persegi Panjang
+      var persegiPanjang = new PersegiPanjang();
+      persegiPanjang.setPanjang(10);
+      persegiPanjang.setLebar(20);
+      persegiPanjang.luas = persegiPanjang.getLebar() * persegiPanjang.getPanjang();
+      persegiPanjang.keliling = 2 * (persegiPanjang.getLebar() + persegiPanjang.getPanjang());
+      console.log("Luas Persegi Panjang : " + persegiPanjang.hitungLuas());
+      console.log("Keliling Persegi Panjang : " + persegiPanjang.hitungKeliling());
+
+      // jajargenjang
+      var jajargenjang = new Jajargenjang();
+      jajargenjang.setTinggi(8);
+      jajargenjang.setAlas(15);
+      jajargenjang.setSisiMiring(10);
+      jajargenjang.luas = jajargenjang.getTinggi() * jajargenjang.getAlas();
+      jajargenjang.keliling = (jajargenjang.getAlas() * 2) + (jajargenjang.getSisiMiring() * 2);
+      console.log("Luas Jajargenjang : " + jajargenjang.hitungLuas());
+      console.log("Keliling Jajargenjang : " + jajargenjang.hitungKeliling());
+
+      // Trapesium
+      var trapesium = new Trapesium();
+      trapesium.setAtap(15);
+      trapesium.setAlas(20);
+      trapesium.setTinggi(10);
+      trapesium.setSisiMiring(12);
+      trapesium.luas = (trapesium.getAtap() + trapesium.getAlas()) * trapesium.getTinggi() / 2;
+      trapesium.keliling = trapesium.getAtap() + trapesium.getAlas() + trapesium.getSisiMiring() * 2;
+      console.log("Luas Trapesium : " + trapesium.hitungLuas());
+      console.log("Keliling Trapesium : " + trapesium.hitungKeliling());
+    </script>
+  </body>
+</html>

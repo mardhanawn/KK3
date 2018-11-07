@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Segitiga & Trapesium</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      h3{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      .bidang{
+        float: left;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px;
+        margin: 20px;
+        top: 80px;
+        left: 250px;
+        width: 30%;
+        height: 550px;
+      }
+      .container{
+        position: relative;
+        background-color: red;
+      }
+      .content{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 50px;
+        text-align: center;
+      }
+      .title{
+        text-align: left;
+        margin-left: 23%;
+        margin-bottom: 5px;
+      }
+      .input{
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 20px;
+        width: 50%;
+        padding: 5px 10px;
+        margin-top: 0px;
+      }
+      .button{
+        margin: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="bidang">
+      <h3>Segitiga</h3>
+      <div class="container">
+        <div class="content">
+          <div class="inputSegitiga">
+            <p class="title">Tinggi Segitiga : </p><input class="input" type="text" id="tinggiSegitiga"/><br>
+            <p class="title">Alas Segitiga : </p><input class="input" type="text" id="alasSegitiga"/><br>
+          </div>
+          <div class="button">
+            <button onClick="segitiga()">Hitung !</button><br>
+          </div>
+          <div class="outputSegitiga">
+            <p class="title">Luas Segitiga : </p><input class="input" type="text" id="luasSegitiga"/><br>
+            <p class="title">Keliling Segitiga : </p><input class="input" type="text" id="kelilingSegitiga"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bidang trapesium">
+      <h3>Trapesium</h3>
+      <div class="container">
+        <div class="content">
+          <div class="inputTrapesium">
+            <p class="title">Tinggi Trapesium : </p><input class="input" type="text" id="tinggiTrapesium"/><br>
+            <p class="title">Alas Trapesium : </p><input class="input" type="text" id="alasTrapesium"/><br>
+            <p class="title">Atap Trapesium : </p><input class="input" type="text" id="atapTrapesium"/><br>
+            <p class="title">Sisi Miring Trapesium : </p><input class="input" type="text" id="miringTrapesium"/><br>
+          </div>
+          <div class="button">
+            <button onClick="trapesium()">Hitung !</button><br>
+          </div>
+          <div class="outputTrapesium">
+            <p class="title">Luas Trapesium : </p><input class="input" type="text" id="luasTrapesium"/><br>
+            <p class="title">Keliling Trapesium : </p><input class="input" type="text" id="kelilingTrapesium"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    //Segitiga
+      const segitiga = (tinggi, alas, luas, keliling) => {
+        tinggi = document.getElementById("tinggiSegitiga").value;
+        alas = document.getElementById("alasSegitiga").value;
+
+        luas = tinggi * alas / 2;
+        keliling = 3*alas;
+
+        document.getElementById("luasSegitiga").value = luas;
+        document.getElementById("kelilingSegitiga").value = keliling;
+      }
+
+    //Trapesium
+      const trapesium = (tinggiTras, alasTras, atap, miring, luasTras, kelilingTras) => {
+        tinggiTras = document.getElementById("tinggiTrapesium").value;
+        alasTras = document.getElementById("alasTrapesium").value;
+        atap = document.getElementById("atapTrapesium").value;
+        miring = document.getElementById("miringTrapesium").value;
+
+        atap = parseInt(atap);
+        alasTras = parseInt(alasTras);
+        luasTras = (atap+alasTras)/2*tinggiTras;
+        kelilingTras = (2*miring)+atap+alasTras;
+
+        document.getElementById("luasTrapesium").value = luasTras;
+        document.getElementById("kelilingTrapesium").value = kelilingTras;
+      }
+    </script>
+  </body>
+</html>

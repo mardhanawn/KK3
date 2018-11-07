@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Welcome () {
+        this.greeting = () => { document.write("Selamat Datang"); };
+      }
+
+      var welcome = new Welcome();
+      welcome.greeting();
+
+      // Persegi
+      class Persegi {
+        constructor(){
+          var sisi = 0;
+
+          this.getSisi = () => { return sisi; }
+          this.setSisi = (nsisi) => { sisi += nsisi; return sisi }
+        }
+
+        Luas(){
+          return this.getSisi() * this.getSisi();
+        }
+
+        Keliling(){
+          return this.getSisi() * 4;
+        }
+      }
+
+      // Persegi Panjang
+      class PersegiPanjang {
+        constructor(){
+          var panjang = 0;
+          var lebar = 0;
+
+          this.getPanjang = () => { return panjang; }
+          this.getLebar = () => { return lebar; }
+
+          this.setPanjang = (npanjang) => { panjang += npanjang; return panjang}
+          this.setLebar = (nlebar) => { lebar += nlebar; return lebar }
+
+        }
+
+        Luas(){
+          return this.getPanjang() * this.getLebar();
+        }
+
+        Keliling(){
+          return 2*(this.getPanjang() + this.getLebar());
+        }
+      }
+
+      // Segitiga
+      class Segitiga {
+        constructor(){
+          var alas = 0;
+          var tinggi = 0;
+
+          this.getAlas = () => { return alas; }
+          this.getTinggi = () => { return tinggi; }
+
+          this.setAlas = (nalas) => { alas += nalas; return alas}
+          this.setTinggi = (ntinggi) => { tinggi += ntinggi; return tinggi; }
+        }
+
+        Luas(){
+          return this.getAlas() * this.getTinggi() / 2;
+        }
+
+        Keliling(){
+          return this.getAlas() * 3;
+        }
+      }
+
+      // Trapeziums
+      class Trapesium {
+        constructor(){
+          var alas = 0;
+          var tinggi = 0;
+          var atap = 0;
+          var sisiMiring = 0;
+
+          this.getAlas = () => { return alas; }
+          this.getTinggi = () => { return tinggi; }
+          this.getAtap = () => { return atap; }
+          this.getSisiMiring = () => { return sisiMiring; }
+
+          this.setAlas = (nalas) => { alas += nalas; return alas; }
+          this.setTinggi = (ntinggi) => { tinggi += ntinggi; return tinggi; }
+          this.setAtap = (natap) => { atap += natap; return atap; }
+          this.setSisiMiring = (nsisiMiring) => { sisiMiring += nsisiMiring; return sisiMiring; }
+        }
+
+        Luas(){
+          return (this.getAtap() + this.getAlas()) * this.getTinggi() / 2;
+        }
+
+        Keliling(){
+          return this.getAtap() + this.getAlas() + this.getSisiMiring() * 2;
+        }
+      }
+
+
+
+      var persegi = new Persegi();
+      persegi.setSisi(10);
+      console.log("Luas Persegi : " + persegi.Luas());
+      console.log("Keliling Persegi : " + persegi.Keliling());
+
+      var persegipanjang = new PersegiPanjang();
+      persegipanjang.setPanjang(10);
+      persegipanjang.setLebar(20);
+      console.log("Luas Persegi Panjang : " + persegipanjang.Luas());
+      console.log("Keliling Persegi Panjang : " + persegipanjang.Keliling());
+
+      var segitiga = new Segitiga();
+      segitiga.setAlas(10);
+      segitiga.setTinggi(10);
+      console.log("Luas Segitiga : " + segitiga.Luas());
+      console.log("Keliling Segitiga : " + segitiga.Keliling());
+
+      var trapesium = new Trapesium();
+      trapesium.setAlas(20);
+      trapesium.setTinggi(10);
+      trapesium.setAtap(20);
+      trapesium.setSisiMiring(10);
+      console.log("Luas Trapesium : " + trapesium.Luas());
+      console.log("Keliling Trapesium : " + trapesium.Keliling());
+    </script>
+  </body>
+</html>
